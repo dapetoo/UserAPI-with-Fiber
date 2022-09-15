@@ -24,7 +24,7 @@ EXPOSE 8080
 # second stage to obtain a very small image
 FROM scratch
 
-COPY --from=builder /fiber-app .
+COPY --from=builder /app .
 
 EXPOSE 8000
 
