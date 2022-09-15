@@ -4,13 +4,12 @@ FROM golang:alpine3.16
 
 WORKDIR /go/src/app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY go.mod ./app
+COPY go.sum ./app
 RUN go mod download
 
-COPY *.go ./
+COPY *.go ./app
 
-WORKDIR /go/src/myapp
 RUN go get app
 RUN go install
 
